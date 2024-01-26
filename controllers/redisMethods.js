@@ -30,7 +30,7 @@ const updateVehicleLocation = async (pincode, lon, lat, socketId) => {
  * 1. pincode
  * 2. longitude
  * 3. latitude
- * The default radius and unit for this function is 5 km
+ * The default radius and unit for this function is 0.1 km or 100 meters
  * This method needs to be used only for ambulance
  * - returns list of socketIds or vehicleIds if query matches
  */
@@ -44,8 +44,8 @@ const getNearbyVehicles = async (pincode, lon, lat) => {
       latitude: lat,
     },
     {
-      radius: 5,
-      unit: 'km',
+      radius: 100,
+      unit: 'm',
     },
   )
   
